@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - run: ls
+      - run: ls -a
       - run : pwd
       - run : touch gitAction
       - name : List
