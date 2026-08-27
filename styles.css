@@ -1,28 +1,402 @@
-/* styles.css */
-body {
-    /* Set a gradient background from purple to teal */
-    background: linear-gradient(to right, #6a3093, #a044ff, #5f2c82, #49a09d);
-    font-family: Arial, sans-serif;
-    /* Sets a clean, modern font for the body text */
-    color: white;
-    /* Sets the text color to white for better contrast */
+/* =========================================
+   Professional Modern Website CSS
+   ========================================= */
+
+/* ---------- Global Reset ---------- */
+* {
     margin: 0;
-    /* Removes default margin */
     padding: 0;
-    /* Removes default padding */
-    display: flex;
-    /* Enables flexbox layout */
-    justify-content: center;
-    /* Centers content horizontally */
-    align-items: center;
-    /* Centers content vertically */
-    height: 100vh;
-    /* Makes the body take the full height of the viewport */
+    box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    /* Modern gradient background */
+    background:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.35), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(6, 182, 212, 0.30), transparent 35%),
+        linear-gradient(135deg, #0f172a, #1e1b4b, #0f172a);
+
+    font-family:
+        "Inter",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    overflow-x: hidden;
+}
+
+/* ---------- Main Container ---------- */
+.container {
+    width: 100%;
+    max-width: 1100px;
+
+    padding: 50px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 24px;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.35),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+
+    animation: fadeIn 0.8s ease;
+}
+
+/* ---------- Heading ---------- */
 h1 {
-    font-size: 2em;
-    /* Sets the size of the header text */
+    font-size: clamp(2rem, 5vw, 4rem);
+
+    font-weight: 800;
+
+    line-height: 1.1;
+
     text-align: center;
-    /* Centers the header text */
+
+    letter-spacing: -1px;
+
+    margin-bottom: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #c4b5fd,
+        #67e8f9
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Sub Heading ---------- */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    color: #f8fafc;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* ---------- Paragraph ---------- */
+p {
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    color: #cbd5e1;
+
+    margin-bottom: 15px;
+}
+
+/* ---------- Buttons ---------- */
+button,
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #06b6d4
+    );
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(6, 182, 212, 0.3);
+
+    opacity: 0.95;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    padding: 25px;
+
+    margin: 20px 0;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 18px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    background: rgba(255, 255, 255, 0.11);
+
+    border-color: rgba(103, 232, 249, 0.4);
+}
+
+/* ---------- Input Fields ---------- */
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin: 8px 0 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: white;
+
+    font-size: 1rem;
+
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #67e8f9;
+
+    box-shadow:
+        0 0 0 3px rgba(103, 232, 249, 0.12);
+}
+
+/* ---------- Links ---------- */
+a {
+    color: #67e8f9;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #c4b5fd;
+}
+
+/* ---------- Grid Layout ---------- */
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+/* ---------- Header ---------- */
+header {
+    width: 100%;
+
+    padding: 20px 30px;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    background: rgba(15, 23, 42, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Navigation ---------- */
+nav {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+
+    gap: 25px;
+
+    list-style: none;
+}
+
+nav a {
+    color: #e2e8f0;
+
+    font-weight: 500;
+
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -5px;
+
+    width: 0;
+    height: 2px;
+
+    background: #67e8f9;
+
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    margin-top: 40px;
+
+    padding-top: 20px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 30px 20px;
+
+        border-radius: 18px;
+    }
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+
+/* ---------- Small Mobile ---------- */
+@media (max-width: 480px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 25px 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .btn,
+    button {
+        width: 100%;
+
+        text-align: center;
+    }
 }
