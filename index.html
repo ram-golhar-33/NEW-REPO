@@ -1,12 +1,1112 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>RAM Foundation | Creating Hope. Changing Lives.</title>
+
+    <meta name="description"
+          content="RAM Foundation is a social service organization dedicated to education, healthcare, community development, environmental protection and humanitarian support.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            color: #172033;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 24px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #0f766e, #14b8a6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #0f766e;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #0f766e;
+        }
+
+        .nav-button {
+            background: #0f766e;
+            color: white !important;
+            padding: 12px 20px;
+            border-radius: 30px;
+        }
+
+        .nav-button:hover {
+            background: #115e59;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 100vh;
+            padding: 150px 25px 80px;
+            background:
+                linear-gradient(90deg,
+                rgba(5,25,35,0.88),
+                rgba(5,25,35,0.45)),
+                url("https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=2000&q=85")
+                center/cover;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: auto;
+            color: white;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            margin-bottom: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            max-width: 780px;
+            font-family: "Playfair Display", serif;
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #5eead4;
+        }
+
+        .hero p {
+            max-width: 650px;
+            font-size: 18px;
+            color: #e2e8f0;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #14b8a6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0f766e;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #172033;
+        }
+
+        /* ================= GENERAL ================= */
+
+        section {
+            padding: 100px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 50px;
+        }
+
+        .section-label {
+            color: #0f766e;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(35px, 5vw, 52px);
+            line-height: 1.15;
+            margin-bottom: 18px;
+        }
+
+        .section-heading p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+            background: #f8fafc;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            height: 520px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        .experience-card {
+            position: absolute;
+            bottom: 25px;
+            right: -25px;
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .experience-card strong {
+            font-size: 32px;
+            color: #0f766e;
+            display: block;
+        }
+
+        .about-text h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+
+        .check-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .check-list li {
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .check-list li::before {
+            content: "✓";
+            color: #0f766e;
+            margin-right: 10px;
+            font-weight: 900;
+        }
+
+        /* ================= SERVICES ================= */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            padding: 35px;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            transition: 0.3s;
+            background: white;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(15,118,110,0.12);
+            border-color: #99f6e4;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: #ccfbf1;
+            color: #0f766e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+            margin-bottom: 25px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ================= IMPACT ================= */
+
+        .impact {
+            background: #0f172a;
+            color: white;
+        }
+
+        .impact .section-label {
+            color: #5eead4;
+        }
+
+        .impact .section-heading p {
+            color: #94a3b8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .stat {
+            padding: 35px 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 18px;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .stat h3 {
+            font-size: 42px;
+            color: #5eead4;
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            color: #94a3b8;
+        }
+
+        /* ================= PROJECTS ================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project-card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            border: 1px solid #e2e8f0;
+        }
+
+        .project-card img {
+            height: 270px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-image {
+            overflow: hidden;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-tag {
+            color: #0f766e;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .project-content h3 {
+            margin: 8px 0;
+        }
+
+        .project-content p {
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        /* ================= VOLUNTEER ================= */
+
+        .cta {
+            padding: 100px 25px;
+        }
+
+        .cta-box {
+            max-width: 1200px;
+            margin: auto;
+            padding: 70px;
+            border-radius: 30px;
+            background:
+                linear-gradient(120deg,
+                rgba(15,118,110,0.95),
+                rgba(20,184,166,0.85)),
+                url("https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-box h2 {
+            font-family: "Playfair Display", serif;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .cta-box p {
+            max-width: 650px;
+            margin: 0 auto 30px;
+            color: #ecfeff;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #0f766e;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #020617;
+            color: white;
+            padding: 70px 25px 25px;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand p {
+            color: #94a3b8;
+            margin-top: 20px;
+            max-width: 400px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #94a3b8;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .footer-column a:hover {
+            color: #5eead4;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 25px;
+            border-top: 1px solid #1e293b;
+            color: #64748b;
+            font-size: 13px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .experience-card {
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 70px 20px;
+            }
+
+            .hero {
+                padding: 130px 20px 70px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services-grid,
+            .projects-grid,
+            .stats,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image img {
+                height: 400px;
+            }
+
+            .about-text h2 {
+                font-size: 38px;
+            }
+
+            .cta-box {
+                padding: 50px 25px;
+            }
+
+            .cta-box h2 {
+                font-size: 38px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>This is Design version V4</h1>
-    
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+    <div class="nav-container">
+
+        <a href="#home" class="logo">
+            <div class="logo-icon">R</div>
+            <div>RAM<span> Foundation</span></div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Our Work</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="#contact" class="nav-button">Get Involved</a></li>
+        </ul>
+
+    </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+            ✦ Building stronger communities together
+        </div>
+
+        <h1>
+            Creating Hope.<br>
+            <span>Changing Lives.</span>
+        </h1>
+
+        <p>
+            RAM Foundation is a social service organization committed to
+            creating meaningful change through education, healthcare,
+            community development and humanitarian support.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#about" class="btn btn-primary">
+                Discover Our Mission →
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Become a Volunteer
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=85"
+                    alt="Community volunteers helping people">
+
+                <div class="experience-card">
+                    <strong>10+</strong>
+                    Years of Service
+                </div>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <div class="section-label">
+                    About RAM Foundation
+                </div>
+
+                <h2>
+                    Small actions can create a lasting impact.
+                </h2>
+
+                <p>
+                    RAM Foundation works with communities, volunteers,
+                    organizations and supporters to create sustainable
+                    social impact.
+                </p>
+
+                <p>
+                    Our mission is simple: empower people, strengthen
+                    communities and create opportunities for a better
+                    tomorrow.
+                </p>
+
+                <ul class="check-list">
+                    <li>Community Development</li>
+                    <li>Education & Skill Development</li>
+                    <li>Healthcare & Well-being</li>
+                    <li>Environmental Protection</li>
+                </ul>
+
+                <a href="#services" class="btn btn-primary">
+                    Explore Our Work
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                What We Do
+            </div>
+
+            <h2>
+                Turning compassion into action.
+            </h2>
+
+            <p>
+                We focus on practical programs that create opportunities,
+                improve lives and strengthen communities.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <div class="service-card">
+
+                <div class="service-icon">📚</div>
+
+                <h3>Education</h3>
+
+                <p>
+                    Supporting students with educational resources,
+                    scholarships, learning programs and career guidance.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">❤️</div>
+
+                <h3>Healthcare</h3>
+
+                <p>
+                    Organizing healthcare awareness programs,
+                    medical support initiatives and community wellness activities.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">🏘️</div>
+
+                <h3>Community Development</h3>
+
+                <p>
+                    Building stronger communities through local
+                    development programs and social initiatives.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">🌱</div>
+
+                <h3>Environment</h3>
+
+                <p>
+                    Promoting tree plantation, cleanliness,
+                    environmental awareness and sustainable living.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">🤝</div>
+
+                <h3>Humanitarian Support</h3>
+
+                <p>
+                    Providing essential support to vulnerable families
+                    and communities during difficult situations.
+                </p>
+
+            </div>
+
+
+            <div class="service-card">
+
+                <div class="service-icon">💼</div>
+
+                <h3>Skill Development</h3>
+
+                <p>
+                    Helping young people develop practical skills,
+                    confidence and opportunities for employment.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= IMPACT ================= -->
+
+<section class="impact" id="impact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Our Impact
+            </div>
+
+            <h2>
+                Together, we make a difference.
+            </h2>
+
+            <p>
+                Every volunteer, supporter and partner helps us reach
+                more people and create meaningful change.
+            </p>
+
+        </div>
+
+
+        <div class="stats">
+
+            <div class="stat">
+                <h3>25K+</h3>
+                <p>People Supported</p>
+            </div>
+
+            <div class="stat">
+                <h3>120+</h3>
+                <p>Community Projects</p>
+            </div>
+
+            <div class="stat">
+                <h3>850+</h3>
+                <p>Active Volunteers</p>
+            </div>
+
+            <div class="stat">
+                <h3>15+</h3>
+                <p>Communities Reached</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div class="section-label">
+                Our Initiatives
+            </div>
+
+            <h2>
+                Projects that create real change.
+            </h2>
+
+            <p>
+                From education to environmental programs,
+                our initiatives are designed around real community needs.
+            </p>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Children receiving education">
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-tag">
+                        Education
+                    </div>
+
+                    <h3>Education For Every Child</h3>
+
+                    <p>
+                        Helping children access learning resources
+                        and build a stronger educational future.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Healthcare community support">
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-tag">
+                        Healthcare
+                    </div>
+
+                    <h3>Community Health Initiative</h3>
+
+                    <p>
+                        Promoting health awareness and accessible
+                        healthcare support for communities.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+                <div class="project-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85"
+                        alt="Volunteers planting trees">
+                </div>
+
+                <div class="project-content">
+
+                    <div class="project-tag">
+                        Environment
+                    </div>
+
+                    <h3>Green Community Project</h3>
+
+                    <p>
+                        Creating greener communities through
+                        plantation drives and environmental awareness.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta" id="contact">
+
+    <div class="cta-box">
+
+        <h2>
+            Be the reason someone smiles.
+        </h2>
+
+        <p>
+            Whether you volunteer your time, support a project,
+            or simply share our mission, your contribution matters.
+        </p>
+
+        <a href="mailto:contact@ramfoundation.org" class="btn">
+            Join Our Mission →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <a href="#home" class="logo">
+                <div class="logo-icon">R</div>
+                <div>RAM<span> Foundation</span></div>
+            </a>
+
+            <p>
+                Creating hope, empowering communities and
+                building a better future through social service.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Organization</h4>
+
+            <a href="#about">About Us</a>
+            <a href="#services">Our Work</a>
+            <a href="#projects">Projects</a>
+            <a href="#impact">Our Impact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Get Involved</h4>
+
+            <a href="#contact">Volunteer</a>
+            <a href="#contact">Donate</a>
+            <a href="#contact">Partner With Us</a>
+            <a href="#contact">Contact Us</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Connect</h4>
+
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div>
+            © 2026 RAM Foundation. All rights reserved.
+        </div>
+
+        <div>
+            Empowering People • Strengthening Communities
+        </div>
+
+    </div>
+
+</footer>
+
 </body>
 </html>
+```
